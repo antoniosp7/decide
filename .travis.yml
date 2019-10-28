@@ -13,9 +13,8 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-  - pip install codacy-coverage
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test --keepdb --with-xunit
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+  - cd local_setting.example.py local_setting.py
+  - python manage.py migrate
+  - python manage.py test
