@@ -15,6 +15,6 @@ install:
   - pip install -r requirements.txt
 script:
   - cd decide
-  - cp local_settings.example.py local_setting.py
-  - python manage.py migrate
-  - python manage.py test
+  - coverage run --branch --source=. ./manage.py test --keepdb --with-xunit
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
