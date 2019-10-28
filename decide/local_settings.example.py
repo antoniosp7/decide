@@ -28,7 +28,7 @@ APIS = {
 BASEURL = 'http://localhost:8000'
 
 DATABASES = {
-    'default': {
+    'default2': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'decide',
